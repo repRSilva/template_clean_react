@@ -1,6 +1,7 @@
 node_modules
 .vs_code
 coverage
-cypress
+public
 dist
-package-lock.json
+*.scss
+*.json
