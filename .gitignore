@@ -1,6 +1,5 @@
 node_modules
 .vs_code
 coverage
-cypress
 dist
 package-lock.json
