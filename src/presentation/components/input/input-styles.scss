@@ -1,90 +1,60 @@
 @import "../../styles/colors.scss";
 
-.inputWrap{
-    margin-top: 40px;
-    position: relative;
-    border-bottom: 2px solid $disabledColor;
+.inputWrap {
+  padding: 10px;
+  margin-top: 40px;
+  position: relative;
+  border-radius: 8px;
+  border: 1px solid $disabledColor;
 
-    &[data-status="valid"]{
-      border-bottom-color: $valid;
+  &[data-status="valid"] {
+    border-color: $valid;
 
-      &::after{
-        background-color: $valid;
-      }
-    }
-
-    &[data-status="invalid"]{
-      border-bottom-color: $invalid;
-
-      &::after{
-        background-color: $invalid;
-      }
-    }
-
-    &::after{
-      content: "";
-      width: 100%;
-      height: 2px;
-      background-color: $disabledColor;
-      position: absolute;
-      bottom: -2px;
-      left: 0px;
-      transform-origin: 0%;
-      transform: scaleX(0);
-      transition: transform 400ms ease;
-    }
-
-    &:focus-within{
-      border-color: transparent;
-      
-      &::after{
-        transform: scaleX(1);
-      }
-
-      label{
-        transform: scale(0.9) translateY(-20px);
-      }
-    }
-
-  input{
-    width: 100%;
-    line-height: 24px;
-    padding: 0px 10px 8px;
-
-    &:not(:placeholder-shown) + label{
-      transform: scale(0.9) translateY(-20px);
+    &::after {
+      background-color: $valid;
     }
   }
 
-  label{
+  &[data-status="invalid"] {
+    border-color: $invalid;
+
+    &::after {
+      background-color: $invalid;
+    }
+  }
+
+  &:focus-within {
+    &::after {
+      transform: scaleX(1);
+    }
+
+    label {
+      transform: scale(0.9) translateY(-36px);
+      background: $white;
+    }
+  }
+
+  input {
+    width: 100%;
+    line-height: 24px;
+    padding: 10px 8px;
+    background: transparent;
+
+    &:not(:placeholder-shown) + label {
+      transform: scale(0.9) translateY(-36px);
+    }
+  }
+
+  label {
     position: absolute;
+    top: 22px;
     left: 8px;
     color: $disabledColor;
     cursor: text;
     transform-origin: 0%;
-    transform: translateY(0px);
+    transform: translateY(0);
     transition: transform 500ms ease;
-  }
-
-  .statusError{
-    position: absolute;
-    right: 8px;
-    font-size: 14px;
-    cursor: help;
-    width: 10px;
-    height: 10px;
-    border-radius: 5px;
-    background-color: $red;
-  }
-
-  .statusSuccess{
-    position: absolute;
-    right: 8px;
-    font-size: 14px;
-    cursor: help;
-    width: 10px;
-    height: 10px;
-    border-radius: 5px;
-    background-color: $green;
+    background: $white;
+    padding: 0 10px;
   }
 }

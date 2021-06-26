@@ -5,10 +5,14 @@
   "plugins": [
     "stylelint-scss"
   ],
-  "rules": {},
+  "rules": {
+    "no-descending-specificity": null
+  },
   "ignoreFile": [
     "**/*.js",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "**/*.json",
+    "**/*.png"
   ]
 }

@@ -4,6 +4,6 @@
       "npm run test:staged"
     ],
     "*.scss": [
-      "npx stylelint src/**"
+      "npx stylelint '**/*.scss' --fix"
     ]
   }

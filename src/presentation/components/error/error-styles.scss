@@ -1,6 +1,6 @@
 @import "../../styles/colors.scss";
 
-.errorWrap{
+.errorWrap {
   display: flex;
   flex-direction: column;
   background-color: $white;
@@ -8,9 +8,9 @@
   align-items: center;
   text-align: center;
   border-radius: 8px;
-  box-shadow: 0px 1px 3px -1px $black;
+  box-shadow: 0 1px 3px -1px $black;
 
-  span{
+  span {
     font-size: 20px;
     margin-bottom: 24px;
   }

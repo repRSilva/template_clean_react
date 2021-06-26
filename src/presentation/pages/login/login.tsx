@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import Styles from './login-styles.scss'
-import { Link, useHistory } from 'react-router-dom'
+import { useHistory } from 'react-router-dom'
 import { Authentication } from '@/domain/usecases'
-import { LoginHeader, Footer, CurrentAccountState } from '@/presentation/components'
+import { CurrentAccountState } from '@/presentation/components'
 import { Validation } from '@/presentation/protocols/validation'
 import { LoginState, Input, SubmitButton, FormStatus } from '@/presentation/pages/login/components'
 import { useRecoilState, useRecoilValue, useResetRecoilState } from 'recoil'
@@ -48,16 +48,21 @@ const Login: React.FC<Props> = ({ validation, authentication }: Props) => {
   }
   return (
     <div className={Styles.loginWrap}>
-      <LoginHeader />
-      <form data-testid="form" className={Styles.form} onSubmit={handleSubmit}>
-        <h2>Login</h2>
-        <Input type="email" name="email" placeholder="Digite seu e-mail" />
-        <Input type="password" name="password" placeholder="Digite sua senha" />
-        <SubmitButton text="Entrar" />
-        <Link to="/signup" data-testid="signup-link" className={Styles.link}>Criar conta</Link>
-        <FormStatus />
-      </form>
-      <Footer />
+      <div className={Styles.contentWrap}>
+        <div className={Styles.imgWrap}>
+          <img className={Styles.img} />
+        </div>
+        <div className={Styles.formWrap}>
+          <h1>Seja bem vindo de volta =)</h1>
+          <form data-testid="form" className={Styles.form} onSubmit={handleSubmit}>
+            <h2>Faça seu Login</h2>
+            <Input type="email" name="email" placeholder="Digite seu e-mail" />
+            <Input type="password" name="password" placeholder="Digite sua senha" />
+            <SubmitButton text="Entrar" />
+            <FormStatus />
+          </form>
+        </div>
+      </div>
     </div>
   )
 }

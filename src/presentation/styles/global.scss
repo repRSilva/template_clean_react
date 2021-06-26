@@ -1,6 +1,6 @@
 @import '../styles/colors.scss';
 
-*{
+* {
   font-family: 'Roboto', sans-serif;
   font-size: 14px;
   padding: 0;
@@ -8,16 +8,18 @@
   box-sizing: border-box;
 }
 
-body{
-  background-color: $background;
+body {
+  background-color: $white;
 }
 
-input[type="password"],[type="email"],[type="text"]{
-  border:none;
+input[type="password"],
+[type="email"],
+[type="text"] {
+  border: none;
   outline: none;
 }
 
-button{
+button {
   background-color: $primary;
   color: $white;
   border-radius: 8px;
@@ -25,17 +27,18 @@ button{
   line-height: 50px;
   cursor: pointer;
   border: 0;
-  padding: 0px 16px;
+  padding: 0 16px;
   outline: none;
 
-  &:hover{
+  &:hover {
     opacity: 0.9;
   }
 
-  &:disabled{
+  &:disabled {
     background-color: $disabledBackground;
     color: $disabledColor;
-    &:hover{
+
+    &:hover {
       opacity: 1;
     }
   }

@@ -1,12 +1,12 @@
 @import "../../styles/colors.scss";
 
-.headerWrap{
+.headerWrap {
   display: flex;
   justify-content: center;
   background-color: $primary;
   border-top: 40px solid $primaryDark;
 
-  .headerContent{
+  .headerContent {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -14,12 +14,12 @@
     flex-grow: 1;
     padding: 24px 40px;
 
-    img{
+    img {
       align-self: center;
       width: 60px;
     }
 
-    .logoutWrap{
+    .logoutWrap {
       display: flex;
       flex-direction: column;
       justify-content: center;
@@ -27,16 +27,16 @@
       align-self: center;
       color: $white;
 
-      span{
+      span {
         font-size: 16px;
         margin-bottom: 8px;
       }
-      
-      a{
+
+      a {
         color: $white;
         text-decoration: none;
 
-        &:hover{
+        &:hover {
           text-decoration: underline;
         }
       }
@@ -45,7 +45,7 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .headerWrap{
+  .headerWrap {
     border-top-width: 20px;
   }
 }
