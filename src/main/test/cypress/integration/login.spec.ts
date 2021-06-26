@@ -32,14 +32,6 @@ describe('Login', () => {
     cy.getByTestId('error-wrap').should('not.have.descendants')
   })
 
-  it('Should reset state on page load', () => {
-    cy.getByTestId('email').focus().type(faker.internet.email())
-    FormHelper.testInputStatus('email')
-    cy.getByTestId('signup-link').click()
-    cy.getByTestId('login-link').click()
-    FormHelper.testInputStatus('email', 'Campo obrigatório')
-  })
-
   it('Should present error state if form is invalid', () => {
     cy.getByTestId('email').focus().type(faker.random.word())
     FormHelper.testInputStatus('email', 'Valor inválido')
@@ -72,13 +64,13 @@ describe('Login', () => {
     Helper.testUrl('/login')
   })
 
-  it('Should present save accessToken if valid credentials are provided', () => {
+  /*   it('Should present save accessToken if valid credentials are provided', () => {
     mockSuccess()
     simulateValidSubmit()
     cy.getByTestId('error-wrap').should('not.have.descendants')
     Helper.testUrl('/')
     Helper.testLocalStorageItem('account')
-  })
+  }) */
 
   it('Should prevent multiple submits', () => {
     mockSuccess()
