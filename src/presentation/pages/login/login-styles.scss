@@ -5,45 +5,40 @@
   min-height: 100vh;
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
-  background: $black;
-  padding: 100px;
+  overflow: hidden;
 
   .contentWrap {
+    flex-grow: 1;
     position: relative;
     display: flex;
-    align-items: stretch;
-    justify-content: center;
-    border-radius: 20px 20px 0 20px;
-    background: $white;
 
     .imgWrap {
       display: flex;
       align-items: center;
       padding: 0 200px;
-      background: linear-gradient(to left, $primaryDark, $white);
-      border-radius: 20px 250px 0 20px;
 
       .img {
         content: url("../../styles/images/background-login.png");
-        filter: drop-shadow(12px 12px 25px $primaryDark);
+        filter: drop-shadow(12px 12px 25px $primaryLight);
         animation: appearFromLeft 1s;
       }
     }
 
     .formWrap {
+      width: 100%;
       display: flex;
       flex-direction: column;
-      justify-content: center;
       align-items: center;
       padding: 100px;
       animation: appearFromRight 1s;
+      background: linear-gradient(to left, $primaryDark, $primary);
 
       h1 {
-        color: $primary;
+        color: $white;
         text-align: center;
-        font-size: 30px;
+        font-size: 60px;
         text-transform: capitalize;
+        max-width: 500px;
       }
 
       .form {
@@ -52,17 +47,16 @@
         width: 500px;
         padding: 40px;
         align-self: center;
-        border-radius: 20px;
-        box-shadow: 0 1px 3px -1px $black;
-        background: $white;
+        border-radius: 8px;
         z-index: 1;
-        margin-top: 2em;
+        margin-top: 5em;
+        background: $white;
 
         h2 {
           color: $primary;
           text-align: center;
-          font-size: 24px;
-          text-transform: uppercase;
+          font-size: 30px;
+          text-transform: capitalize;
         }
 
         button {
