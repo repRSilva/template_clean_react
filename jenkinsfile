@@ -44,5 +44,10 @@ pipeline {
                 sh 'docker run -p 3000:3000 --name react-clean-deploy react-clean:v1'
             }
         }
+        stage('Finished'){
+            steps{
+                sh 'echo finished!'
+            }
+        }
     }
 }
