@@ -1,0 +1,48 @@
+pipeline { 
+    agent any
+     
+      tools {
+          nodejs "node"
+      }
+    stages {
+        stage('Clean') { 
+            steps { 
+                sh 'rm -rf template_clean_react'
+            }
+        }
+        stage('Clone') { 
+            steps { 
+                sh 'git clone https://github.com/repRSilva/template_clean_react.git'
+            }
+        }
+        stage('Npm Install'){
+            steps{
+                sh 'cd template_clean_react && npm i'
+            }
+        }
+        stage('Build react'){
+            steps{
+                sh 'cd template_clean_react && npm run build'
+            }
+        }
+        stage('Test'){
+            steps {
+                sh 'cd template_clean_react'
+                sh 'npx eslint "src/**"'
+                sh 'npm run test:ci'
+                sh 'npm run test:cypress:ci'
+            }
+        }
+        stage('Build'){
+            steps{ 
+                sh 'cd template_clean_react'
+                sh 'docker build -t react-clean:v1 .'
+            }
+        }
+        stage('Deploy') {
+            steps {
+                sh 'docker run -p 3000:3000 --name react-clean-deploy react-clean:v1'
+            }
+        }
+    }
+}
